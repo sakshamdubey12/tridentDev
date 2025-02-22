@@ -1,0 +1,194 @@
+{
+    "items": [
+      {
+        "id": "1",
+        "name": "Graphics T-Shirt",
+        "price": 1290,
+        "imageUrl": "https://i.ibb.co/Mhw1f3K/t1.jpg",
+        "colorChoices": ["Black"],
+        "category":"Tshirt"
+      },
+    
+      {
+        "id": "2",
+        "name": "Maxi Gathered Cami Dress",
+        "price": 3090,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/88928ee1a7c94abe98be214918c81b09UR_w1440_q90.webp",
+        "colorChoices": ["SkyBlue", "Pink", "Maroon","Black","#006400"],
+        "category":"Tshirt"
+      }, 
+      {
+        "id": "3",
+        "name": "Slogan Printed Sweatshirts",
+        "price": 1590,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/88f2b718a690450494e35d8ac9d7fdb2UR_w1440_q90.webp",
+        "colorChoices": ["#006400"],
+        "category":"Top"
+      },
+      {
+        "id": "4",
+        "name": "Printed Cotton T-shirt",
+        "price": 890,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/651a26f1d4554e6b8834c1054a0c6c7aUR_w1440_q90.webp",
+        "colorChoices": ["beige"],
+        "category":"Tshirt"
+      },
+      {
+        "id": "5",
+        "name": "Cropped Satin Blouse",
+        "price": 1190,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/bf9d8197435b440c94a55d531331c1adUR_w1440_q90.webp",
+        "colorChoices": ["beige", "Blue", "Maroon","Black","#006400"],
+        "category":"Top"
+      },
+      {
+        "id": "6",
+        "name": "Buttoned Placket Blouse",
+        "price": 1790,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/f26176b58db4411d9ff1cd3077a262c2UR_w1440_q90.webp",
+        "colorChoices": ["Maroon", "Purple", "Pink","Black","beige"],
+        "category":"Top"
+      },
+      {
+        "id": "7",
+        "name": "Ruched Bodycon Dress",
+        "price": 990,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/fc164521a76c45b983f59180a9159e34UR_w1440_q90.webp",
+        "colorChoices": ["Brown", "Black"],
+        "category":"Dress"
+      },
+      {
+        "id": "8",
+        "name": "Lace Floral Cut Out Blouse",
+        "price": 1290,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/7e6d9c0dd6394a6caeb1841ececbc04cUR_w1440_q90.webp",
+        "colorChoices": ["beige"],
+        "category":"Top"
+      },
+     
+      {
+        "id": "9",
+        "name": "Drawstring Gathered Top",
+        "price": 690,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/f5907820399b4481a80f8c98b98d9e4aUR_w1440_q90.webp",
+        "colorChoices": ["Brown", "Pink", "Black"],
+        "category":"Top"
+      },
+      {
+        "id": "10",
+        "name": "Tied Bow Wrap Skirt",
+        "price": 1890,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/806b879ecd1b4781b23fbabce9ad3eb0UR_w1440_q90.webp",
+        "colorChoices": ["Maroon","Pink","Black"],
+        "category":"Skirt"
+        
+      },
+      {
+        "id": "11",
+        "name": "Cotton T-shirt With Slogan",
+        "price": 890,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/bc15f3a4014c48cf9760f3e03a14cc9cUR_w1440_q90.webp",
+        "colorChoices": ["Black"],
+        "category":"Tshirt"
+      },
+      {
+        "id": "12",
+        "name": "Gathered Bodycon Dress",
+        "price": 2990,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/86652f6a1c664af8bbaae3593cae7363UR_w1440_q90.webp",
+        "colorChoices": ["Maroon", "Black", "Gray"],
+        "category":"Dress"
+      },
+      {
+        "id": "13",
+        "name": "Long Flared Chiffon Dress",
+        "price": 2990,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/398ea29c7bbc4f158b2f1c114c0d6e74UR_w1440_q90.webp",
+        "colorChoices": ["Pink", "grey"],
+        "category":"Dress"
+      },
+      {
+        "id": "14",
+        "name": "Blocked Pullover T-shirt",
+        "price": 790,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/4a045d092a004ebdbd6253b15e68361fUR_w1440_q90.webp",
+        "colorChoices": ["Maroon","#006400"],
+        "category":"Tshirt"
+      },
+      {
+        "id": "15",
+        "name": "Drawstring Pullover T-Shirt",
+        "price": 690,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/a24a42b29bf9494fbaf9008e30d19315UR_w1440_q90.webp",
+        "colorChoices": ["Maroon","Black","beige"],
+        "category":"Tshirt"
+      },
+      {
+        "id": "16",
+        "name": "Straight Leg Trousers",
+        "price": 1690,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/7eebe47f78d44416ad7ca22c435bdc7eUR_w1440_q90.webp",
+        "colorChoices": ["#665135"],
+        "category":"Trouser"
+      },
+      {
+        "id": "17",
+        "name": "Cotton T-shirt",
+        "price": 890,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/e476e22a1809485eb5e0cecd3bea865bUR_w1440_q90.webp",
+        "colorChoices": ["Blue","Green","beige"],
+        "category":"Tshirt"
+      },
+      {
+        "id": "18",
+        "name": "Slit Straight Skirt",
+        "price": 1790,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/e8daf0c0f99e4ebdadb201f1dd0546e9UR_w1440_q90.webp",
+        "colorChoices": ["Brown","beige","Pink","Black"],
+        "category":"Skirt"
+      },
+    
+      {
+        "id": "19",
+        "name": "Short Flared A-line Skirt",
+        "price": 1690,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/6f5a1dd0b75e4625af593982243fee01UR_w1440_q90.webp",
+        "colorChoices": ["Black"],
+        "category":"Skirt"
+      },
+      {
+        "id": "20",
+        "name": "Gathered Cargo Trousers",
+        "price": 1890,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/a012e7f4b75344d0b121181218963bbaUR_w1440_q90.webp",
+        "colorChoices": ["Green","Blue","Yellow","Pink"],
+        "category":"Trouser"
+      },
+      {
+        "id": "21",
+        "name": "Gathered Cargos",
+        "price": 1590,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/a07c5b210d00499cb386c341d644f5a0UR_w1440_q90.webp",
+        "colorChoices": ["Blue","Black"],
+        "category":"Trouser"
+      },
+      {
+        "id": "22",
+        "name": "Button Straight Leg Pants",
+        "price": 1890,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/343c9e74e8e742d397c3688349738c32UR_w1440_q90.webp",
+        "colorChoices": ["Brown","beige"],
+        "category":"Trouser"
+      },
+      {
+        "id": "23",
+        "name": "Knot Straight Leg Trousers",
+        "price": 1790,
+        "imageUrl": "https://img101.urbanic.com/v1/goods-pic/75736c3dbf074430ae7b5bb700f49bb0UR_w1440_q90.webp",
+        "colorChoices": ["pink","beige"],
+        "category":"Trouser"
+      }
+  
+    ]
+  }
+  
