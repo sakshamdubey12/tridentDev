@@ -3,7 +3,7 @@ import { FiEdit, FiSave, FiPlusCircle, FiTrash } from "react-icons/fi";
 import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
-import { logout, updateDetails } from "../redux/authSlice";
+import { logout, updateDetails,addAddress } from "../redux/authSlice";
 import { fetchOrders } from "../redux/orderSlice";
 import { Link } from "react-router-dom";
 
