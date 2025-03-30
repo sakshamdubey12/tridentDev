@@ -110,6 +110,7 @@ export const updateDetails = createAsyncThunk(
 
       const data = await response.json();
       if (response.ok) {
+        console.log(data.userData)
         return { token: data.token, userId: data.userId, Data:data.userData }; // OTP verified successfully
       } else {
         throw new Error(data.error || 'Error verifying OTP');
