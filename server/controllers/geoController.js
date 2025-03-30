@@ -67,7 +67,7 @@ const saveAddress = async (req, res) => {
     // Add new address to user's addresses array
     user.addresses.push(newAddress);
     await user.save();
-
+    console.log(user,'user data')
     res.status(201).json({ message: "Address added successfully", user });
   } catch (error) {
     console.error("Error saving address:", error);
