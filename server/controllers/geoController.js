@@ -49,7 +49,7 @@ const saveAddress = async (req, res) => {
     }
 
     // Ensure user.addresses is an array before pushing
-    if (!Array.isArray(user.address)) {
+    if (!Array.isArray(user.addresses)) {
       user.addresses = []; // Initialize as an empty array if undefined
     }
 
@@ -67,7 +67,7 @@ const saveAddress = async (req, res) => {
     // Add new address to user's addresses array
     user.addresses.push(newAddress);
     await user.save();
-    console.log(user,'user data')
+    console.log(user.addresses,'user data')
     res.status(201).json({ message: "Address added successfully", user });
   } catch (error) {
     console.error("Error saving address:", error);
