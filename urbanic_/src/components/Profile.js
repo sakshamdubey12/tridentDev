@@ -75,6 +75,13 @@ console.log(Data)
       }
   
       const savedAddress = await response.json();
+
+        // Dispatch action to update Redux store
+        dispatch(updateDetails({ 
+          userId, 
+          addresses: [...userData.addresses, savedAddress] 
+        }));
+
       // Add the new address returned from the backend to the list
       setUserData((prevData) => ({
         ...prevData,

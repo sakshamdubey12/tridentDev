@@ -97,7 +97,7 @@ export const logout = createAsyncThunk('auth/logout', async (_, { rejectWithValu
 
 export const updateDetails = createAsyncThunk(
   'auth/updateDetails',
-  async ({ name, phone, gender, dob, userId }, { rejectWithValue }) => {
+  async ({ name, phone, gender, dob, userId,addresses }, { rejectWithValue }) => {
     try {
       const response = await fetch('https://tridentdev-1.onrender.com/api/auth/update', {
         method: 'PUT',
@@ -105,7 +105,7 @@ export const updateDetails = createAsyncThunk(
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, phone, gender, dob, userId }),
+        body: JSON.stringify({ name, phone, gender, dob, userId,addresses }),
       });
 
       const data = await response.json();
