@@ -60,8 +60,7 @@ const Profile = () => {
     setLoading(true);
   
     try {
-      console.log(addressForm,'d')
-      const response = await fetch("http://localhost:5000/api/geo/save-address", {
+      const response = await fetch("https://tridentdev-1.onrender.com/api/geo/save-address", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
