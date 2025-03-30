@@ -74,6 +74,34 @@ export const verifyOtp = createAsyncThunk(
   }
 );
 
+export const addAddress = createAsyncThunk(
+  'auth/addAddress',
+  async ({ addressForm, userId }, { rejectWithValue }) => {
+    try {
+      console.log(addressForm, 'adding address...');
+      console.log(userId, 'user ID...');
+      
+      const response = await fetch("https://tridentdev-1.onrender.com/api/geo/save-address", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...addressForm, userId }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to save address");
+      }
+
+      const updatedData = await response.json();
+      return updatedData.addresses; // Return the saved address
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+
 // Async thunk to handle logout
 export const logout = createAsyncThunk('auth/logout', async (_, { rejectWithValue }) => {
   try {
@@ -97,7 +125,7 @@ export const logout = createAsyncThunk('auth/logout', async (_, { rejectWithValu
 
 export const updateDetails = createAsyncThunk(
   'auth/updateDetails',
-  async ({ name, phone, gender, dob, userId,addresses }, { rejectWithValue }) => {
+  async ({ name, phone, gender, dob, userId }, { rejectWithValue }) => {
     try {
       const response = await fetch('https://tridentdev-1.onrender.com/api/auth/update', {
         method: 'PUT',
@@ -105,7 +133,7 @@ export const updateDetails = createAsyncThunk(
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, phone, gender, dob, userId,addresses }),
+        body: JSON.stringify({ name, phone, gender, dob, userId }),
       });
 
       const data = await response.json();
@@ -198,6 +226,23 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(logout.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
+
+      builder
+      .addCase(addAddress.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(addAddress.fulfilled, (state, action) => {
+        state.loading = false;
+        if (!state.Data.addresses) {
+          state.Data.addresses = [];
+        }
+        state.Data.addresses.push(action.payload); // Append new address to existing list
+      })
+      .addCase(addAddress.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

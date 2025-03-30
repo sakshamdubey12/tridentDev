@@ -55,49 +55,25 @@ console.log(Data)
 
   // Handle adding a new address
   const handleAddAddress = async () => {
-    console.log(addressForm,'addind address...')
-    console.log(userData,'existing addresses...')
     if (!addressForm.houseNo || !addressForm.street) return;
   
     setLoading(true);
   
     try {
-      const response = await fetch("https://tridentdev-1.onrender.com/api/geo/save-address", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({...addressForm,userId}),
-      });
+      const resultAction = await dispatch(addAddress({ addressForm, userId }));
   
-      if (!response.ok) {
-        throw new Error("Failed to save address");
+      if (addAddress.fulfilled.match(resultAction)) {
+        setIsModalOpen(false);
+        setAddressForm({
+          houseNo: "",
+          building: "",
+          street: "",
+          locality: "",
+          pincode: "",
+          city: "",
+          state: "",
+        });
       }
-  
-      const savedAddress = await response.json();
-
-        // Dispatch action to update Redux store
-        dispatch(updateDetails({ 
-          userId, 
-          addresses: [...userData.addresses, savedAddress] 
-        }));
-
-      // Add the new address returned from the backend to the list
-      setUserData((prevData) => ({
-        ...prevData,
-        addresses: [...prevData.addresses, savedAddress],
-      }));
-  
-      setIsModalOpen(false);
-      setAddressForm({
-        houseNo: "",
-        building: "",
-        street: "",
-        locality: "",
-        pincode: "",
-        city: "",
-        state: "",
-      });
     } catch (error) {
       console.error("Error adding address:", error);
     } finally {
@@ -154,6 +130,7 @@ console.log(Data)
       gender:userData.gender,
       dob:userData.dob,
       userId:userId,
+       
     }))
   }
 
