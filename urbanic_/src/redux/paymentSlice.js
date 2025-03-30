@@ -8,7 +8,7 @@ export const createRazorpayOrder = createAsyncThunk(
   'payment/createRazorpayOrder',
   async ({ userId, finalTotal, discount, cartItems }, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/create-razorpay-order', {
+      const response = await fetch('https://tridentdev-1.onrender.com/api/create-razorpay-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -34,7 +34,7 @@ export const verifyRazorpayPayment = createAsyncThunk(
   'payment/verifyRazorpayPayment',
   async ({ userId, finalTotal, discount, cartItems, name, phone, address, paymentData }, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/verify-razorpay-payment', {
+      const response = await fetch('https://tridentdev-1.onrender.com/api/verify-razorpay-payment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -71,7 +71,7 @@ export const createShiprocketOrder = createAsyncThunk(
   async ({ orderId, name, phone, address, totalPrice, cartItems }, { rejectWithValue }) => {
     
     try {
-      const response = await fetch('http://localhost:5000/api/shiprocket/create-shiprocket-order', {
+      const response = await fetch('https://tridentdev-1.onrender.com/api/shiprocket/create-shiprocket-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -100,7 +100,7 @@ export const fetchTrackingData = createAsyncThunk(
   'payment/fetchTrackingData',
   async (id, { rejectWithValue }) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/shiprocket/track-order/${id}`);
+      const response = await fetch(`https://tridentdev-1.onrender.com/api/shiprocket/track-order/${id}`);
 
       if (!response.ok) throw new Error('Failed to fetch tracking data');
 
@@ -124,7 +124,7 @@ export const checkPincodeAvailability = createAsyncThunk(
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/check-pincode/${pincode}`);
+      const response = await fetch(`https://tridentdev-1.onrender.com/api/check-pincode/${pincode}`);
       const data = await response.json();
 
       if (!response.ok) {

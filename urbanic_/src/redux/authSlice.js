@@ -27,7 +27,7 @@ export const sendOtp = createAsyncThunk(
   'auth/sendOtp',
   async (email, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/send-otp', {
+      const response = await fetch('https://tridentdev-1.onrender.com/api/auth/send-otp', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -53,7 +53,7 @@ export const verifyOtp = createAsyncThunk(
   'auth/verifyOtp',
   async ({ email, otp }, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/verify-otp', {
+      const response = await fetch('https://tridentdev-1.onrender.com/api/auth/verify-otp', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -77,7 +77,7 @@ export const verifyOtp = createAsyncThunk(
 // Async thunk to handle logout
 export const logout = createAsyncThunk('auth/logout', async (_, { rejectWithValue }) => {
   try {
-    const response = await fetch('http://localhost:5000/api/auth/logout', {
+    const response = await fetch('https://tridentdev-1.onrender.com/api/auth/logout', {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -99,7 +99,7 @@ export const updateDetails = createAsyncThunk(
   'auth/updateDetails',
   async ({ name, phone, gender, dob, userId }, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/update', {
+      const response = await fetch('https://tridentdev-1.onrender.com/api/auth/update', {
         method: 'PUT',
         credentials: 'include',
         headers: {

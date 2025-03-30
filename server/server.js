@@ -25,15 +25,15 @@ app.use(cors({
 
 connectDB();
 
-const path = require("path");
+// const path = require("path");
 
-// Serve static files from the React frontend
-app.use(express.static(path.join(__dirname, "build")));
+// // Serve static files from the React frontend
+// app.use(express.static(path.join(__dirname, "build")));
 
-// Handle any route that doesn't match API routes
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+// // Handle any route that doesn't match API routes
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 // Shiprocket API token
 const apiToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU4ODQ1NzksInNvdXJjZSI6InNyLWF1dGgtaW50IiwiZXhwIjoxNzQwNzI0NTM1LCJqdGkiOiJ0d3dSR1FkYWJJWktBVHN4IiwiaWF0IjoxNzM5ODYwNTM1LCJpc3MiOiJodHRwczovL3NyLWF1dGguc2hpcHJvY2tldC5pbi9hdXRob3JpemUvdXNlciIsIm5iZiI6MTczOTg2MDUzNSwiY2lkIjo1NjczNzMxLCJ0YyI6MzYwLCJ2ZXJib3NlIjpmYWxzZSwidmVuZG9yX2lkIjowLCJ2ZW5kb3JfY29kZSI6IiJ9.DMl5FTu4du0h5itI75xzozABK_1hGbTnptvz5X74mOA"

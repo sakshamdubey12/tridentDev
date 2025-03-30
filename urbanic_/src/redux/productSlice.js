@@ -5,7 +5,7 @@ import storage from 'redux-persist/lib/storage';
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
-    const response = await fetch('http://localhost:5000/api/products'); // Replace with your actual API URL
+    const response = await fetch('https://tridentdev-1.onrender.com/api/products'); // Replace with your actual API URL
     const data = await response.json();
     return data;
   }
@@ -14,7 +14,7 @@ export const fetchProducts = createAsyncThunk(
 export const deleteProduct = createAsyncThunk(
   'products/deleteProduct',
   async ({id}) => {
-    const response = await fetch(`http://localhost:5000/api/products/${id}`,
+    const response = await fetch(`https://tridentdev-1.onrender.com/api/products/${id}`,
       {
         method: 'DELETE',
         credentials: 'include',
@@ -32,7 +32,7 @@ export const deleteProduct = createAsyncThunk(
 export const updateProduct = createAsyncThunk(
   'products/updateProduct',
   async ({id,Productdata}) => {
-    const response = await fetch(`http://localhost:5000/api/products/${id}`,
+    const response = await fetch(`https://tridentdev-1.onrender.com/api/products/${id}`,
       {
         method: 'PUT',
         credentials: 'include',
@@ -51,7 +51,7 @@ export const updateProduct = createAsyncThunk(
 export const addProduct = createAsyncThunk(
   'products/addProduct',
   async ({Productdata}) => {
-    const response = await fetch(`http://localhost:5000/api/products`,
+    const response = await fetch(`https://tridentdev-1.onrender.com/api/products`,
       {
         method: 'POST',
         credentials: 'include',

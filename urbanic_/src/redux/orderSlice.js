@@ -108,7 +108,7 @@ import storage from 'redux-persist/lib/storage';
 export const fetchOrders = createAsyncThunk(
   'orders/fetchOrders',
   async ({ userId }) => {
-    const response = await fetch(`http://localhost:5000/api/order/allOrders?userId=${userId}`);
+    const response = await fetch(`https://tridentdev-1.onrender.com/api/order/allOrders?userId=${userId}`);
     if (!response.ok) {
       throw new Error('Failed to fetch orders');
     }
@@ -121,7 +121,7 @@ export const createOrder = createAsyncThunk(
   'orders/createOrder',
   async (orderData, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/create-razorpay-order', {
+      const response = await fetch('https://tridentdev-1.onrender.com/api/create-razorpay-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData),
@@ -139,7 +139,7 @@ export const createOrder = createAsyncThunk(
 export const updateOrderStatus = createAsyncThunk(
   'orders/updateOrderStatus',
   async ({ orderId, status }) => {
-    const response = await fetch(`http://localhost:5000/api/order/updateStatus`, {
+    const response = await fetch(`https://tridentdev-1.onrender.com/api/order/updateStatus`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status, orderId }),
