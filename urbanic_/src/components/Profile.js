@@ -6,6 +6,8 @@ import { useDispatch,useSelector } from "react-redux";
 import { logout, updateDetails } from "../redux/authSlice";
 import { fetchOrders } from "../redux/orderSlice";
 import { Link } from "react-router-dom";
+
+
 const Profile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -23,7 +25,7 @@ const Profile = () => {
     addresses: Data.addresses,
 });
 
-
+console.log(Data)
   const [newAddress, setNewAddress] = useState('');
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,7 +49,7 @@ const Profile = () => {
 
   // Handle input change
   const handleChange = (e) => {
-    console.log(e)
+    // console.log(e)
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
