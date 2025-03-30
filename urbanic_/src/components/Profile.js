@@ -40,8 +40,8 @@ const Profile = () => {
    useEffect(() => {
       // Simulate a delay for fetching data based on category
       dispatch(fetchOrders({userId}))
-      console.log(orders)
-      console.log('xx',userData)
+      // console.log(orders)
+      // console.log('xx',userData)
 
     }, []);
 
@@ -53,11 +53,14 @@ const Profile = () => {
 
   // Handle adding a new address
   const handleAddAddress = async () => {
+    console.log(addressForm,'addind address...')
+    console.log(userData,'existing addresses...')
     if (!addressForm.houseNo || !addressForm.street) return;
   
     setLoading(true);
   
     try {
+      console.log(addressForm,'d')
       const response = await fetch("http://localhost:5000/api/geo/save-address", {
         method: "POST",
         headers: {
@@ -71,7 +74,6 @@ const Profile = () => {
       }
   
       const savedAddress = await response.json();
-  
       // Add the new address returned from the backend to the list
       setUserData((prevData) => ({
         ...prevData,
