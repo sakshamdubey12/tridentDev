@@ -312,9 +312,9 @@ console.log(Data)
         {activeSection === "address" && (
           <div>
             <h3 className="text-lg font-semibold mb-3">Saved Addresses</h3>
-            {userData.addresses.map((address, index) => (
+            {userData?.addresses?.map((address, index) => (
               <div key={index} className="flex justify-between items-center bg-gray-100 p-2 rounded mb-2">
-                <p>{address.houseNo}, {address.building}, {address.street}, {address.locality}, {address.city}, {address.state}, {address.pincode}</p>
+                <p>{address?.houseNo}, {address?.building}, {address?.street}, {address?.locality}, {address?.city}, {address?.state}, {address?.pincode}</p>
                 <button
                   onClick={() => handleDeleteAddress(index)}
                   className="text-gray-500 hover:text-black"
