@@ -18,7 +18,7 @@ const app = express();
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(cors({
-  origin: "https://trident-nu-livid.vercel.app", // Replace with your frontend's URL
+  origin: ["http://localhost:3002","https://trident-nu-livid.vercel.app"], // Replace with your frontend's URL
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "Content-Type,Authorization"
@@ -27,16 +27,29 @@ app.use(cors({
 
 // Manually set headers for all responses
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://trident-nu-livid.vercel.app");
+  const allowedOrigins = ["http://localhost:3002", "https://trident-nu-livid.vercel.app"];
+  const origin = req.headers.origin;
+  
+  if (allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+  }
+
   res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
   res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
   res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
 
+
 // Handle Preflight Requests (OPTIONS)
 app.options("*", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "https://trident-nu-livid.vercel.app");
+  const allowedOrigins = ["http://localhost:3002", "https://trident-nu-livid.vercel.app"];
+  const origin = req.headers.origin;
+  
+  if (allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+  }
+
   res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
   res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
   res.header("Access-Control-Allow-Credentials", "true");
