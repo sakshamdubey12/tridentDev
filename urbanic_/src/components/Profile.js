@@ -25,7 +25,6 @@ const Profile = () => {
     addresses: Data.addresses,
 });
 
-console.log(Data)
   const [newAddress, setNewAddress] = useState('');
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -64,6 +63,10 @@ console.log(Data)
   
       if (addAddress.fulfilled.match(resultAction)) {
         setIsModalOpen(false);
+        setUserData(prevData => ({
+          ...prevData,
+          addresses: [...prevData.addresses, addressForm]
+        }));
         setAddressForm({
           houseNo: "",
           building: "",
