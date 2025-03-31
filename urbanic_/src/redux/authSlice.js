@@ -77,10 +77,7 @@ export const verifyOtp = createAsyncThunk(
 export const addAddress = createAsyncThunk(
   'auth/addAddress',
   async ({ addressForm, userId }, { rejectWithValue }) => {
-    try {
-      console.log(addressForm, 'adding address...');
-      console.log(userId, 'user ID...');
-      
+    try {     
       const response = await fetch("https://tridentdev-1.onrender.com/api/geo/save-address", {
         method: "POST",
         headers: {
@@ -89,13 +86,17 @@ export const addAddress = createAsyncThunk(
         body: JSON.stringify({ ...addressForm, userId }),
       });
 
+
       if (!response.ok) {
-        throw new Error("Failed to save address");
+        const errorText = await response.text(); // Read response text for debugging
+        throw new Error(`Failed to save address: ${errorText}`);
       }
 
       const updatedData = await response.json();
-      return updatedData.addresses; // Return the saved address
+
+      return updatedData.user; // Return the saved address
     } catch (error) {
+      console.error("🚨 Error in addAddress:", error);
       return rejectWithValue(error.message);
     }
   }
@@ -237,10 +238,7 @@ const authSlice = createSlice({
       })
       .addCase(addAddress.fulfilled, (state, action) => {
         state.loading = false;
-        if (!state.Data.addresses) {
-          state.Data.addresses = [];
-        }
-        state.Data.addresses.push(action.payload); // Append new address to existing list
+        state.Data.addresses = action.payload.addresses // Append new address to existing list
       })
       .addCase(addAddress.rejected, (state, action) => {
         state.loading = false;
